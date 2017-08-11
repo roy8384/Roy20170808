@@ -1,10 +1,15 @@
 package google.homepage.search;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
@@ -12,14 +17,16 @@ import org.testng.annotations.Test;
 public class SearchTest {
 	
 	@Test
-	public void testSearch() {
+	public void testSearch() throws MalformedURLException {
 		
 		Logger log = Logger.getLogger(SearchTest.class);
         // Create a new instance of the Firefox driver
         // Notice that the remainder of the code relies on the interface, 
         // not the implementation.
 		System.setProperty("webdriver.gecko.driver", "C:\\Users\\Fan_Yan\\AutomationTesting\\chromedriver.exe");
-        WebDriver driver = new FirefoxDriver();
+		DesiredCapabilities ieDesiredcap = DesiredCapabilities.chrome();  
+		URL url = new URL("http://192.168.99.100:4444/wd/hub");
+		WebDriver driver = new RemoteWebDriver(url,ieDesiredcap);
 
         // And now use this to visit Google
         driver.get("http://www.google.com");
