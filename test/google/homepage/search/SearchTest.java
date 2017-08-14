@@ -23,7 +23,7 @@ public class SearchTest {
         // Create a new instance of the Firefox driver
         // Notice that the remainder of the code relies on the interface, 
         // not the implementation.
-		System.setProperty("webdriver.gecko.driver", "C:\\Users\\Fan_Yan\\AutomationTesting\\chromedriver.exe");
+//		System.setProperty("webdriver.gecko.driver", "C:\\Users\\Fan_Yan\\AutomationTesting\\chromedriver.exe");
 		DesiredCapabilities ieDesiredcap = DesiredCapabilities.chrome();  
 		URL url = new URL("http://192.168.99.100:4444/wd/hub");
 		WebDriver driver = new RemoteWebDriver(url,ieDesiredcap);
