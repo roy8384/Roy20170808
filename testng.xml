@@ -4,6 +4,7 @@
   <test name="Test">
     <classes>
       <class name="google.homepage.search.SearchTest"/>
+      <class name="google.homepage.search.backToHome"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
